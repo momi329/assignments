@@ -1,6 +1,6 @@
 
 body{
-    
+    margin: 0;
     font-family: 'Times New Roman', Times, serif;
 }
 #upper-nav{
@@ -14,6 +14,7 @@ body{
 
 #title-nav{
     padding-left: 4vw;
+    cursor: pointer;
 }
 
 #right-nav{
@@ -22,6 +23,7 @@ body{
 }
 nav{
     padding-right: 4vw;
+    cursor: pointer;
 }
 
 .welcome{
@@ -72,7 +74,7 @@ p{
     height: 30px;
     width: 100px;
     padding: 10px;
-
+    cursor: pointer;
     background-color:rgb(199, 222, 241);
     margin: 10px;
     display: flex;
