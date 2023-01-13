@@ -7,6 +7,8 @@ const button = document.querySelector(".button");
 const contentBox3 = document.querySelector(".content-box-3");
 const contentBox4 = document.querySelector(".content-box-4");
 
+
+
 title.addEventListener("click", () => {
   title.innerHTML = "<h1 class=welcome>Have a nice day!</h1>";
 });
@@ -25,12 +27,24 @@ close.addEventListener("click", () => {
   btnHam.style.display = "flex";
 });
 
+//button.addEventListener("click", () => {
+//    contentBox3.style.display = "flex";
+//    contentBox4.style.display = "flex";
+//  
+//    if（contentBox3.style.display === "flex"） {
+ //   contentBox3.style.display = "none";
+//    contentBox4.style.display = "none";
+//  }
+//});
+
 button.addEventListener("click", () => {
-  if (contentBox3.style.display === "none") {
-    contentBox3.style.display = "flex";
-    contentBox4.style.display = "flex";
-  } else {
+  //console.log("ok");
+  if(contentBox3.style.display === "flex") {
     contentBox3.style.display = "none";
     contentBox4.style.display = "none";
+  }
+  else{
+  contentBox3.style.display = "flex";
+  contentBox4.style.display = "flex";
   }
 });
