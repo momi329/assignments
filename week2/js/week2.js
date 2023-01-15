@@ -9,6 +9,7 @@ const contentBox4 = document.querySelector(".content-box-4");
 
 
 
+
 title.addEventListener("click", () => {
   title.innerHTML = "<h1 class=welcome>Have a nice day!</h1>";
 });
@@ -38,13 +39,12 @@ close.addEventListener("click", () => {
 //});
 
 button.addEventListener("click", () => {
-  //console.log("ok");
-  if(contentBox3.style.display === "flex") {
-    contentBox3.style.display = "none";
-    contentBox4.style.display = "none";
+  if(contentBox3.style.display === "none"||contentBox3.style.display === ""){
+    contentBox3.style.display = "flex";
+    contentBox4.style.display = "flex";
   }
   else{
-  contentBox3.style.display = "flex";
-  contentBox4.style.display = "flex";
+  contentBox3.style.display = "none";
+  contentBox4.style.display = "none";
   }
 });
