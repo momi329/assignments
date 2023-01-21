@@ -1,0 +1,64 @@
+body{
+    background-color: #0e00d3;
+    font-family: 'Unbounded', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff00b0;
+    justify-content: center;
+}
+#hello{
+    font-size: 2.5em;
+}
+.add{
+    display: flex;
+    flex-direction: row;
+}
+
+form{
+    margin-top: 20px;
+}
+
+label{
+    font-size: 1.2em;
+    color:#f2f2f2;
+    letter-spacing: 0.2rem;
+
+}
+input{
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #ff00b0;
+    
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 10px;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#result{
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    color: white;
+    animation: alternate-reverse;
+}
+
