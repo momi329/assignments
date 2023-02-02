@@ -1,0 +1,39 @@
+body{
+    background: rgb(247,150,192);
+    background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+    font-family: 'Maven Pro', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.words{
+    margin-top: 10%;
+    width: 80vw;
+    background-color: rgba(255, 255, 255, 0.475);
+    border-radius: 20px;
+    
+}
+.phone{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    
+}
+.name{
+    font-size:2rem;
+    width: 33%;
+    
+}
+.price{
+    width: 33%;
+    font-size:2rem;
+    align-items:flex-end;
+}
+.description{
+    font-size: 1.2rem;
+    width: 33%;
+}
