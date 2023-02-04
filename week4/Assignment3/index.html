@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css">
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useEffect, useState } = React;
+      function Welcome() {
+        const [message, setMessage] = useState("Welcome Message");
+
+        return (
+          <header className="welcome">
+            <h1 onClick={() => setMessage("Have a nice Day")}>{message}</h1>
+          </header>
+        );
+      }
+
+      function Header() {
+        const [toggle, setToggle] = useState(true);
+        const handleClick = () => {
+          setToggle(false);
+        };
+        useEffect(() => console.log(toggle), [toggle]);
+
+        return (
+          <header id="upper-nav">
+            <h4 id="title-nav">Website Title / Logo</h4>
+            <div className="ham" onClick={handleClick}>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </div>
+            <section id="right-nav">
+              <nav>item1</nav>
+              <nav>item1</nav>
+              <nav>item1</nav>
+              <nav>item1</nav>
+            </section>
+            {toggle ? (
+              ""
+            ) : (
+              <nav className="sidebar">
+                <span
+                  className="material-icons"
+                  onClick={() => setToggle(true)}
+                >
+                  close
+                </span>
+                <div className="sidenav-wrapper">
+                  <nav className="sidenav">item1</nav>
+                  <nav className="sidenav">item1</nav>
+                  <nav className="sidenav">item1</nav>
+                  <nav className="sidenav">item1</nav>
+                </div>
+              </nav>
+            )}
+          </header>
+        );
+      }
+      const contentBox = [1, 2, 3, 4];
+      const contentBox2 = [5, 6, 7, 8];
+      const box = document.querySelector(".content-box");
+
+      function Main(){
+        const [newArr, setNewArr] = useState([]);
+
+        return (
+          <main>
+            <h3 className="section-title">Section Title</h3>
+            <section className="content-box">
+              {contentBox.map((num) => (
+                <div className="box" key={contentBox.index}>
+                  <p>Content Box{num}</p>
+                </div>
+              ))}
+            </section>
+            <div
+              className="button"
+              onClick={() =>
+                newArr.length === 0 ? setNewArr(contentBox2) : setNewArr([])
+              }
+            >
+              {/* newArr===[] ? (setNewArr(contentBox2)):(setNewArr([])) */}
+              <p>Call to action</p>
+            </div>
+            <section className="content-box">
+              {newArr.map((num) => (
+                <div className="box" key={contentBox2.index}>
+                  <p>Content Box{num}</p>
+                </div>
+              ))}
+            </section>
+          </main>
+        );
+      };
+
+      function MyApp() {
+        return (
+          <>
+            <Header />
+            <Welcome />
+            <Main/>
+          </>
+        );
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this section for a production-ready setup with JSX:
+      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+      In a larger project, you can use an integrated toolchain that includes JSX instead:
+      https://reactjs.org/docs/create-a-new-react-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      https://reactjs.org/docs/react-without-jsx.html
+    -->
+  </body>
+</html>
